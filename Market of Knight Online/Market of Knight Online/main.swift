@@ -12,7 +12,7 @@ var shoppingCart: [Items] = []
 
 print("Welcome to the Market of the Knight Online!\nYou need to complete few steps to log in.\n")
 
-func SignUpScreen() {
+func SignUpScreen() { // Read lines for each struct property
     print("Enter your login id: ")
     
     if let id = readLine(){
@@ -52,6 +52,7 @@ func listItems(itemsArray: [Items]) {
 }
 
 func itemDetails(itemsArray: [Items]) {
+    
     print("\nType the number of item you want to see details or Type 'mypage' to go to your page")
     if let choice = readLine() {
         if choice == "mypage" { MyPage(itemsArray: itemsArray)
@@ -71,6 +72,7 @@ func itemDetails(itemsArray: [Items]) {
                             case 1: addToFavorites(item: chosenItem, itemsArray: itemsArray)
                             case 2: listItems(itemsArray: itemsArray)
                             default: print("choose a number between 0 - 2")
+                                
                             }
                         }
                     }
@@ -152,7 +154,7 @@ func MyPage(itemsArray: [Items]) {
     }
 }
 
-switch newUser.job {
+switch newUser.job { // Get the right item array for the chosen job.
 case .Warrior:
     listItems(itemsArray: warriorItems)
 case .Rogue:

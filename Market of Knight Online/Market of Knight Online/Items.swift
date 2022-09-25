@@ -10,13 +10,12 @@ import Foundation
 
 
 enum ItemType {
-    case Armor, Weapon, Shield, Necklace, Earring, Belt, Ring
+    case Armor, Weapon, Shield, Necklace, Earring, Belt, Ring // Use Switch case to list items by their item type
 }
 
 
-
 struct Items {
-    private let productID: UUID = UUID()
+    private let productID: UUID = UUID() // UUID for unique items
     let name: String
     let suitableFor: Jobs
     let itemtype: ItemType
